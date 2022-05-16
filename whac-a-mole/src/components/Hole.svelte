@@ -20,7 +20,7 @@
         width: 10rem;
         height: 10rem;
         background-color: #ddd;
-        border-radius: 5px;
+        border-radius: 1rem;
     }
 </style>
 

@@ -48,7 +48,7 @@
 
         setInterval(() => {
             checkLives()
-            if (lives > 0) {
+            if (state.current != state.dead) {
                 console.log(1)
                 // Randomly select a hole
                 const hole = pickEmptyHole();
@@ -64,9 +64,9 @@
         }, 2500);
 
         setTimeout(() => {
-            
                 setInterval(() => {
-                if (lives > 0) {
+                checkLives()
+                if (state.current != state.dead) {
 
                     // Randomly select a hole
                     const hole = pickEmptyHole();
@@ -109,22 +109,42 @@
 </script>
 
 <style lang="scss">
+
+    @import './src/variables';
+
+    @mixin center{
+
+        display: flex;
+        flex-direction: column;
+		align-items: center;
+
+    }
     #holes {
+
         display: inline-grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
+
     }
 
-    div {
+    #front_text {
 
-        text-align: center;
+        @include center;
+
+        h2 {
+
+            color: $gray;
+
+        }
     }
+
 </style>
 
-<div>
-    {state.current}
-    Poäng: {score}, liv: {lives}
-</div>
+<section id="front_text">
+    <h2>{state.current}</h2>
+    <h2>Poäng: {score}, liv: {lives}</h2>
+</section>
+
 <section id="holes">
     {#each holes as hole}
         <Hole on:clickHole={handleMoleClick} {hole} />
