@@ -20,6 +20,7 @@
         width: 10rem;
         height: 10rem;
         background-color: #ddd;
+        border-radius: 5px;
     }
 </style>
 
@@ -28,7 +29,5 @@
         <Mole />
     {:else if hole.content === "bomb"}
         <Bomb />
-    {:else}
-        Empty
     {/if}
 </div>

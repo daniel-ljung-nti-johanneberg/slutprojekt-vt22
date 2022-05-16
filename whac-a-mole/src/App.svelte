@@ -11,7 +11,7 @@
 
 
 <main>
-
+  
   <section id="game">
 
     <Game/>
@@ -21,7 +21,15 @@
 </main>
 
 
-<style>
+<style lang="scss">
 
+  main {
+
+    display:flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+  }
 
 </style>
