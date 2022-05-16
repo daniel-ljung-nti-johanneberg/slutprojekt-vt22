@@ -13,14 +13,25 @@
 </script>
 
 <style lang="scss">
-    .hole {
+
+    @import './src/variables';
+
+    @mixin center{
+
         display: flex;
         justify-content: center;
         align-items: center;
+
+    }
+
+
+    .hole {
+        @include center;
         width: 10rem;
         height: 10rem;
         background-color: #ddd;
         border-radius: 1rem;
+        box-shadow: $shadow;
     }
 </style>
 

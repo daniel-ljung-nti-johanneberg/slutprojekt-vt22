@@ -39,7 +39,7 @@
         [...Array(9)].map((_, i) => {
             holes.push({
                 content: null,  // either "mole", "bomb" or null
-                timeoutId: null,
+                // timeoutId: null,
                 index: i
             });
         });
@@ -94,7 +94,7 @@
         console.log(e);
         const {index} = e.detail;
         const hole = holes[index];
-        clearTimeout(hole.timeoutId);
+        //clearTimeout(hole.timeoutId);
 
         if (hole.content === "mole") {
             hole.content = null;
