@@ -24,13 +24,15 @@
     }
 
     const pickEmptyHole = () => {
-
-        let hole;
         
-        if (!holes.map(hole => !!hole.content).includes(false)) return null;
+        let hole;
+
+        // Checks and makes sure at least one hole is empty
+        if (!holes.map(hole => hole.content).includes(null)) return null;
         do {
             hole = holes[Math.floor(Math.random() * holes.length)];
         } while (hole.content !== null);
+        
         return hole;
     }
 
@@ -39,7 +41,6 @@
         [...Array(9)].map((_, i) => {
             holes.push({
                 content: null,  // either "mole", "bomb" or null
-                // timeoutId: null,
                 index: i
             });
         });
@@ -67,7 +68,7 @@
                 setInterval(() => {
                 checkLives()
                 if (state.current != state.dead) {
-
+                    
                     // Randomly select a hole
                     const hole = pickEmptyHole();
 
@@ -83,7 +84,6 @@
                 
             }, 2500);
 
-            
 
         }, 2500*4 + 1000)
 
@@ -92,9 +92,8 @@
 
     const handleMoleClick = e => {
         console.log(e);
-        const {index} = e.detail;
+        const index = e.detail.index;
         const hole = holes[index];
-        //clearTimeout(hole.timeoutId);
 
         if (hole.content === "mole") {
             hole.content = null;

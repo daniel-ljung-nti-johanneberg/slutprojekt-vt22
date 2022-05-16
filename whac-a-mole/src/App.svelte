@@ -4,7 +4,7 @@
   
 
 
-  // Components: Game, Hole, Mole, Status
+  // Components: Game, Hole, Mole
 
 </script>
 

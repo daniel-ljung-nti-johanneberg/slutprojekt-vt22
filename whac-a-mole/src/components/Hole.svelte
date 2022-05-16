@@ -7,7 +7,6 @@
 
     const dispatch = createEventDispatcher();
 
-    /** @type {{content: "mole" | "bomb" | null, moleSinceActive: number, index: number}} */
     export let hole;
 
 </script>
